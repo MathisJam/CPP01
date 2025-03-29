@@ -15,7 +15,7 @@
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
 
-class Zombie 
+class Zombie
 {
     public :
     Zombie();

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjameau <mjameau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 15:02:49 by mjameau           #+#    #+#             */
-/*   Updated: 2025/02/19 19:32:44 by mjameau          ###   ########.fr       */
+/*   Created: 2025/02/19 17:03:08 by mjameau           #+#    #+#             */
+/*   Updated: 2025/02/19 19:02:52 by mjameau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/HumanA.hpp"
+#include "../inc/Harl.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
+int main(int ac, char **av)
 {
-}
+	Harl harl;
 
-HumanA::~HumanA(void)
-{
-}
-
-void HumanA::attack(void) const
-{
-	std::cout << BOLD << CYAN << this->_name << BOLD << RED <<  " attacks with his " << BOLD GREEN <<  this->_weapon.getType() << RESET << std::endl;
+	if (ac != 2)
+	{
+		std::cout << BOLD RED << "Error ❌ : Usage: ./harl [DEBUG/INFO/WARNING/ERROR]" << RESET << std::endl;
+		return (1);
+	}
+	harl.complain(av[1]);
+	return (0);
 }

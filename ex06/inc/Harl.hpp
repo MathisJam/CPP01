@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjameau <mjameau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 14:58:33 by mjameau           #+#    #+#             */
-/*   Updated: 2025/02/19 14:59:21 by mjameau          ###   ########.fr       */
+/*   Created: 2025/02/19 17:03:10 by mjameau           #+#    #+#             */
+/*   Updated: 2025/02/19 19:30:20 by mjameau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
 #define BOLD "\033[1m"
 #define RESET "\033[0m"
@@ -27,15 +27,18 @@
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
 
-class Weapon
+class Harl
 {
 	public:
-		Weapon(std::string type);
-		~Weapon(void);
-		std::string const &getType(void);
-		void setType(std::string type);
+		Harl();
+		~Harl();
+		void complain(std::string level);
+
 	private:
-		std::string _type;
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
 };
 
 #endif
